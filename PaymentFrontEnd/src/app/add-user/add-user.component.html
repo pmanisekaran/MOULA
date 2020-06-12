@@ -1,0 +1,11 @@
+<p>
+    <label>User Name: </label>
+
+    <input [value]="userName" (input)="userName=$event.target.value">
+    <label>Balance: </label>
+
+    <input [value]="userBalance" (input)="userBalance=$event.target.value">
+
+    <button (click)="AddUser()">Add </button>
+
+</p>
