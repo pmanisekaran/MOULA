@@ -1,7 +1,6 @@
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.csprojAssemblyReference.cache
 D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.AssemblyInfoInputs.cache
 D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.AssemblyInfo.cs
 D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.RazorTargetAssemblyInfo.cache
@@ -92,3 +91,4 @@ D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.csproj.CopyComplete
 D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.dll
 D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.pdb
 D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.genruntimeconfig.cache
+D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.csprojAssemblyReference.cache

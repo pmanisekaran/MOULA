@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PaymentAPI.Services;
+using PaymentAPI.Services.Implementations;
 
 namespace PaymentAPI
 {
@@ -26,6 +28,8 @@ namespace PaymentAPI
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+			services.AddTransient<IPaymentValidatorService, PaymentValidatorService>();
+			services.AddTransient<IPaymentService, PaymentService>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +41,10 @@ namespace PaymentAPI
 			}
 
 			app.UseHttpsRedirection();
+			app.UseCors(builder =>
+		   builder.AllowAnyOrigin()
+			.AllowAnyHeader()
+			.AllowAnyMethod());
 
 			app.UseRouting();
 
