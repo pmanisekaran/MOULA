@@ -1,7 +1,7 @@
 ﻿using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
 
-namespace PaymentAPI.Services
+namespace PaymentAPI.Services.Interfaces
 {
 	public interface IPaymentValidatorService
 	{

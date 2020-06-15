@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿ 
 using Microsoft.AspNetCore.Mvc;
-using PaymentAPI.Models;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
-using PaymentAPI.Services.Implementations;
+using PaymentAPI.Services.Implementations.Business;
 
 namespace PaymentAPI.Controllers
 {
@@ -16,14 +11,14 @@ namespace PaymentAPI.Controllers
     public class PaymentController : ControllerBase
     {
 
-        private PaymentService paymentService;
+        private readonly PaymentService paymentService;
         public PaymentController(PaymentService paymentService)
         {
             this.paymentService=paymentService;
         }
 
         // GET: api/Payment
-        [HttpGet]
+        [HttpPost]
         public ListPaymentResponse ListPayments( ListPaymentsRequest request)
         {
             return paymentService.ListPayments(request);

@@ -7,8 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PaymentAPI.Models.Business;
+using PaymentAPI.Services.Interfaces;
 
-namespace PaymentAPI.Services
+namespace PaymentAPI.Services.Implementations.Validators
 {
 	public class PaymentValidatorService : IPaymentValidatorService
 	{
@@ -20,8 +22,10 @@ namespace PaymentAPI.Services
 		{
 			CreatePaymentResponse response = new CreatePaymentResponse();
 			response.IsValid = false;
-
-			if (InMemoryData.CurrentBalance - req.Amount < 0)
+			if (req.Amount <= 0m || req.PaymentDate== DateTime.MinValue)
+				response.ErrorMessages.Add("Amount must be supplied and must be positive number and date must be supplied");
+			
+			else if (InMemoryData.CurrentBalance - req.Amount < 0m)
 				response.ErrorMessages.Add("Not Enough Balance");
 			else
 				response.IsValid = true;
@@ -55,9 +59,12 @@ namespace PaymentAPI.Services
 			if (payment == null)
 				response.ErrorMessages.Add("No such payment exists!!!??");
 			else if (payment.Status != "Pending")
-				response.ErrorMessages.Add("Only Pending payment can be processed");
+				response.ErrorMessages.Add("Only pending payment can be cancelled");
 			else
+			{
 				response.IsValid = true;
+				response.Payment = payment;
+			}
 			return response;
 		}
 	}

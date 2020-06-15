@@ -1,9 +1,6 @@
-﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
-using PaymentAPI.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using PaymentAPI.Models.Business;
 
 namespace PaymentAPI.Data
 {
@@ -11,7 +8,7 @@ namespace PaymentAPI.Data
 	{
 		static InMemoryData()
 		{
-			InMemoryData.CurrentBalance = 10000;
+			CurrentBalance = 10000m;
 		}
 
 		public static Decimal CurrentBalance { get; set; }

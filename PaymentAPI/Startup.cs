@@ -12,6 +12,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PaymentAPI.Services;
 using PaymentAPI.Services.Implementations;
+using PaymentAPI.Services.Implementations.Business;
+using PaymentAPI.Services.Implementations.Validators;
+using PaymentAPI.Services.Interfaces;
 
 namespace PaymentAPI
 {

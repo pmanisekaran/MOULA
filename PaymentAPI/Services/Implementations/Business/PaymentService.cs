@@ -1,79 +1,67 @@
-﻿using Microsoft.Extensions.Logging;
-using PaymentAPI.Data;
-using PaymentAPI.Models;
+﻿using PaymentAPI.Data;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
+using PaymentAPI.BusinessLogicSingleResponsibility;
+using PaymentAPI.Models.Business;
+using PaymentAPI.Services.Interfaces;
 
-namespace PaymentAPI.Services.Implementations
+namespace PaymentAPI.Services.Implementations.Business
 {
 	public class PaymentService : IPaymentService
 	{
-		private IPaymentValidatorService paymentValidatorService;
-		public PaymentService(IPaymentValidatorService validatorService)
+		public IPaymentValidatorService PaymentValidatorService { get; }
+
+		public PaymentService(IPaymentValidatorService validatorService)// dependency injection
 		{
-			paymentValidatorService = validatorService;
+			PaymentValidatorService = validatorService;
 		}
+
+		/// <summary>
+		/// This method is for user story 1
+		/// </summary>
+		/// <param name="createPaymentRequest"></param>
+		/// <returns></returns>
 		public CreatePaymentResponse CreatePayment(CreatePaymentRequest createPaymentRequest)
 		{
-			var response = paymentValidatorService.ValidateCreatePayment(createPaymentRequest);
-			if (response.IsValid)
-			{
-				Payment payment = new Payment();
-				payment.Amount = Convert.ToDecimal(createPaymentRequest.Amount);
-				payment.CancellationMessage = string.Empty;
-				payment.PaymentDate = Convert.ToDateTime(createPaymentRequest.PaymentDate);
-				payment.RunningBalance = InMemoryData.CurrentBalance;
-				payment.Status = "Pending";// normally I would have enum rather than string. 
 
-				InMemoryData.Payments.Add(payment);
-				response.Payment = payment;
-				return response;
-			}
-			else
-				return response;
+			 return (CreatePaymentResponse)new CreatePaymentBL(PaymentValidatorService).ExecuteAction(createPaymentRequest);
+			 
+
+
 		}
 
-		public ApprovePaymentResponse ApprovePayment(ApprovePaymentRequest approvePaymentRequest)
-		{
-			ApprovePaymentResponse response = paymentValidatorService.ValidateApprovePayment(approvePaymentRequest);
-			if (response.IsValid)
-			{
-				response.Payment.Status = "Processed";
-				InMemoryData.CurrentBalance -= response.Payment.Amount;
-				response.Payment.RunningBalance = InMemoryData.CurrentBalance;
-				return response;
-			}
-			else
-				return response;
-		}
+		/// <summary>
+		/// This method is for user story 2
+		/// </summary>
+		/// <param name="cancelPaymentRequest"></param>
+		/// <returns></returns>
 
 		public CancelPaymentResponse CancelPayment(CancelPaymentRequest cancelPaymentRequest)
 		{
-			CancelPaymentResponse response = paymentValidatorService.ValidateCancelPayment(cancelPaymentRequest);
-			if (response.IsValid)
-			{
-				response.Payment.Status = "Closed";
-				InMemoryData.CurrentBalance -= response.Payment.Amount;
-				response.Payment.RunningBalance = InMemoryData.CurrentBalance;
-				return response;
-			}
-			else
-				return response;
+			return (CancelPaymentResponse)new CancelPaymentBL(PaymentValidatorService).ExecuteAction(cancelPaymentRequest);
 		}
 
+		/// <summary>
+		/// This method is for user story 3
+		/// </summary>
+		/// <param name="approvePaymentRequest"></param>
+		/// <returns></returns>
+		public ApprovePaymentResponse ApprovePayment(ApprovePaymentRequest approvePaymentRequest)
+		{
+			return (ApprovePaymentResponse)new ApprovePaymentBL(this.PaymentValidatorService).ExecuteAction(approvePaymentRequest);
+		}
+		/// <summary>
+		/// This method is for user story 4
+		/// </summary>
+		/// <param name="request"></param>
+		/// <returns></returns>
 		public ListPaymentResponse ListPayments(ListPaymentsRequest request)
 		{
 			// request object not used as search criteria not part of the specification
 
-			ListPaymentResponse response = new ListPaymentResponse();
-			response.Payments.AddRange(InMemoryData.Payments.OrderByDescending(x => x.PaymentDate).ToList());
-			return response;
+			return  (ListPaymentResponse)new ListPaymentsBL(this.PaymentValidatorService).ExecuteAction(request);
 		}
 
 

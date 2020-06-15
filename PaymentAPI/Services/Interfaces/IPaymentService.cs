@@ -1,13 +1,15 @@
 ﻿using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
 
-namespace PaymentAPI.Services.Implementations
+namespace PaymentAPI.Services.Interfaces
 {
 	public interface IPaymentService
 	{
-		CancelPaymentResponse CancelPayment(CancelPaymentRequest cancelPaymentRequest);
+	
 		CreatePaymentResponse CreatePayment(CreatePaymentRequest createPaymentRequest);
-		ListPaymentResponse ListPayments(ListPaymentsRequest request);
+		CancelPaymentResponse CancelPayment(CancelPaymentRequest cancelPaymentRequest);
 		ApprovePaymentResponse ApprovePayment(ApprovePaymentRequest approvePaymentRequest);
+		ListPaymentResponse ListPayments(ListPaymentsRequest request);
+	
 	}
 }

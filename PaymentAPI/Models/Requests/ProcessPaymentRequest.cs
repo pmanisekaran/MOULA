@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PaymentAPI.Models.Requests
 {
-	public class ApprovePaymentRequest
+	public class ApprovePaymentRequest :IRequest
 	{
 
 		public Guid PaymentId { get; set; }

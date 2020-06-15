@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PaymentAPI.Models.Business;
+using PaymentAPI.Models.Responses.BaseClasses;
 
 namespace PaymentAPI.Models.Responses
 {
-	public class ListPaymentResponse
+	public class ListPaymentResponse : PaymentResponse
 	{
-
-		public bool IsValid { get; set; }
 		public List<Payment> Payments { get; set; }
-		public List<string> ErrorMessages { get; }
+	 
 	}
 }
