@@ -5,7 +5,7 @@ namespace PaymentAPI.Models.Business
 	public class Payment
 	{
 	 
-		public Guid PaymentId { get; } = Guid.NewGuid();
+		public Guid PaymentId { get; set; }
 		public string Status { get; set; }
 		public decimal Amount { get; set; }
 		public DateTime PaymentDate { get; set; }

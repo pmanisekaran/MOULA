@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentAPI", "PaymentAPI.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTestPaymentsAPI", "..\NUnitTestPaymentsAPI\NUnitTestPaymentsAPI.csproj", "{9CDDF292-345A-49E1-8743-430C4AAF28E2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionalTest", "..\FunctionalTest\FunctionalTest.csproj", "{3E589D25-1A59-4F05-92FD-1437DF9DD587}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9CDDF292-345A-49E1-8743-430C4AAF28E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CDDF292-345A-49E1-8743-430C4AAF28E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CDDF292-345A-49E1-8743-430C4AAF28E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E589D25-1A59-4F05-92FD-1437DF9DD587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E589D25-1A59-4F05-92FD-1437DF9DD587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E589D25-1A59-4F05-92FD-1437DF9DD587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E589D25-1A59-4F05-92FD-1437DF9DD587}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

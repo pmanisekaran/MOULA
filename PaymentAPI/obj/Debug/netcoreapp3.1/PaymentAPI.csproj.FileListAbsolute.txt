@@ -1,5 +1,4 @@
-D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
-D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -10,9 +9,10 @@ D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\PaymentAPI.runtimeconfig.dev.js
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\PaymentAPI.dll
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\PaymentAPI.pdb
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
-D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 D:\Code\MOULA\PaymentAPI\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -91,3 +91,4 @@ D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\staticwebassets\PaymentAPI.Stat
 D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.dll
 D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.pdb
 D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.genruntimeconfig.cache
+D:\Code\MOULA\PaymentAPI\obj\Debug\netcoreapp3.1\PaymentAPI.csprojAssemblyReference.cache

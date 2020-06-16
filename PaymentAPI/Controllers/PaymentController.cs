@@ -1,31 +1,56 @@
-﻿ 
+﻿
 using Microsoft.AspNetCore.Mvc;
+using PaymentAPI.Data;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
 using PaymentAPI.Services.Implementations.Business;
+using PaymentAPI.Services.Interfaces;
+using System.Collections.Generic;
 
 namespace PaymentAPI.Controllers
 {
-    [Route("api/[controller]")]
+   
     [ApiController]
+    [Route("[controller]")]
     public class PaymentController : ControllerBase
     {
 
-        private readonly PaymentService paymentService;
-        public PaymentController(PaymentService paymentService)
+        private readonly IPaymentService paymentService;
+        public PaymentController(IPaymentService paymentService)
         {
-            this.paymentService=paymentService;
+            this.paymentService = paymentService;
+        }
+        [HttpGet]
+        [Route("List")]
+        public ListPaymentResponse List()
+        {
+            return this.ListPayments(new ListPaymentsRequest());
         }
 
-        // GET: api/Payment
+        /// <summary>
+        /// Utility function needed for functinal API testing
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("ClearPayments")]
+
+        public int ClearPayments()
+        {
+            int i = InMemoryData.Payments.Count;
+            InMemoryData.Payments.Clear();
+            return i;
+        }
+
         [HttpPost]
-        public ListPaymentResponse ListPayments( ListPaymentsRequest request)
+        [Route("ListPayments")]
+        public ListPaymentResponse ListPayments(ListPaymentsRequest request)
         {
             return paymentService.ListPayments(request);
         }
 
         // POST: api/CreatePayment
         [HttpPost]
+        [Route("CreatePayment")]
         public CreatePaymentResponse CreatePayment([FromBody] CreatePaymentRequest request)
         {
 
@@ -34,6 +59,7 @@ namespace PaymentAPI.Controllers
         }
         // POST: api/CreatePayment
         [HttpPost]
+        [Route("CancelPayment")]
         public CancelPaymentResponse CancelPayment([FromBody] CancelPaymentRequest request)
         {
 
@@ -42,6 +68,7 @@ namespace PaymentAPI.Controllers
         }
         // POST: api/CreatePayment
         [HttpPost]
+        [Route("ApprovePayment")]
         public ApprovePaymentResponse ApprovePayment([FromBody] ApprovePaymentRequest request)
         {
 

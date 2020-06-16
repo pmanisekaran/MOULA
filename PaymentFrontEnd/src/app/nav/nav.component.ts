@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CreatePaymentComponent} from "../create-payment/create-payment.component" ;
+import {ListPaymentsComponent} from "../list-payments/list-payments.component" ;
 
 @Component({
   selector: 'app-nav',

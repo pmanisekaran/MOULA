@@ -9,7 +9,7 @@ namespace PaymentAPI.Models.Responses
 {
 	public class ListPaymentResponse : PaymentResponse
 	{
-		public List<Payment> Payments { get; set; }
+		public List<Payment> Payments { get; } = new List<Payment>();
 	 
 	}
 }

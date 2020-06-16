@@ -28,6 +28,7 @@ namespace PaymentAPI.BusinessLogicSingleResponsibility
 				response.Payment.Status = "Closed";
 			//	InMemoryData.CurrentBalance -= response.Payment.Amount;
 				response.Payment.RunningBalance = InMemoryData.CurrentBalance;
+				response.Payment.CancellationMessage = ((CancelPaymentRequest)req).CancelReason;
 				return response;
 			}
 			return response;

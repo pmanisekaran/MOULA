@@ -35,6 +35,7 @@ namespace PaymentAPI.BusinessLogicSingleResponsibility
 
 				Payment payment = new Payment
 				{
+					PaymentId = Guid.NewGuid(),
 					Amount = Convert.ToDecimal(request.Amount),
 					CancellationMessage = string.Empty,
 					PaymentDate = Convert.ToDateTime(request.PaymentDate),

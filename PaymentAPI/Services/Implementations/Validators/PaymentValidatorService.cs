@@ -47,7 +47,7 @@ namespace PaymentAPI.Services.Implementations.Validators
 				response.Payment = payment;
 			}
 			else
-				response.ErrorMessages.Add("Such a payment does not exists!!!!");
+				response.ErrorMessages.Add("You cannot approve/cancel processed or closed payments");
 			return response;
 
 		}
@@ -55,7 +55,7 @@ namespace PaymentAPI.Services.Implementations.Validators
 		public CancelPaymentResponse ValidateCancelPayment(CancelPaymentRequest cancelPaymentRequest)
 		{
 			CancelPaymentResponse response = new CancelPaymentResponse();
-			Payment payment = InMemoryData.Payments.FirstOrDefault(x => x.PaymentId == x.PaymentId);
+			Payment payment = InMemoryData.Payments.FirstOrDefault(x => x.PaymentId == cancelPaymentRequest.PaymentId);
 			if (payment == null)
 				response.ErrorMessages.Add("No such payment exists!!!??");
 			else if (payment.Status != "Pending")

@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "3efababc-bb02-47c4-9e97-8d9f762d0f12",
+		"name": "Functional API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Valid Payment. Check result",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"amount\":111.00\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60770/payment/createpayment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60770",
+					"path": [
+						"payment",
+						"createpayment"
+					]
+				},
+				"description": "create Payment"
+			},
+			"response": []
+		},
+		{
+			"name": "Add payment no date",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"amount\":111.00\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60770/payment/createpayment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60770",
+					"path": [
+						"payment",
+						"createpayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add payment no amount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n   \"fromDate\":null,\r\n    \"toDate\":null\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60770/payment/listpayments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60770",
+					"path": [
+						"payment",
+						"listpayments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid Approve Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n   \"paymentId\":\"b48b6438-1770-47ce-a9e0-6f9502bca208\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60770/payment/ApprovePayment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60770",
+					"path": [
+						"payment",
+						"ApprovePayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show List of payments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60770/payment/ListPayments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60770",
+					"path": [
+						"payment",
+						"ListPayments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,11 +1,32 @@
-<p>
-    <label>User Name: </label>
+<div class="panel-body">
+    <table>
+        <tr>
+            <td>
+                <label for="Amount" class="control-label">Amount: </label>
+            </td>
+            <td>
+                <input class="form-control" required  id="Amount" name="Amount" type="number" [value]="amount"
+               
+                    (input)="amount=$event.target.value">
+                    <span *ngIf="amount==0" class="help-block" style="color:#FF4A33"> {{amountErrorMsg}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="PaymentDate" class="control-label">Date: </label>
+            </td>
+            <td>
+                <input required name="PaymentDate" id="PaymentDate" type="date" [value]="paymentDate"
+                    (input)="paymentDate=$event.target.value">
+                    <span *ngIf="paymentDate == undefined || paymentDate == null" class="help-block" style="color:#FF4A33"> {{paymentDateErrorMsg}}</span>
+            </td>
+        </tr>
+        <tr><td span=rows>
+            <button (click)="AddPayment()"   >Add </button>
+        </td></tr>
+    </table>
 
-    <input [value]="userName" (input)="userName=$event.target.value">
-    <label>Balance: </label>
 
-    <input [value]="userBalance" (input)="userBalance=$event.target.value">
 
-    <button (click)="AddUser()">Add </button>
-
-</p>
+</div>
+ 

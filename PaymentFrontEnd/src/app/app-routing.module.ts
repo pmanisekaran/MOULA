@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
- 
+import {CreatePaymentComponent} from "./create-payment/create-payment.component" ;
+import {ListPaymentsComponent} from "./list-payments/list-payments.component" ;
 import{PaymentsComponent} from "./payments/payments.component";
  
 

@@ -22,7 +22,8 @@ namespace PaymentAPI.BusinessLogicSingleResponsibility
 		public IPaymentResponse ExecuteAction(IRequest request)
 		{
 			ListPaymentResponse response = new ListPaymentResponse();
-			response.Payments.AddRange(InMemoryData.Payments.OrderByDescending(x => x.PaymentDate).ToList());
+			var res = InMemoryData.Payments.OrderByDescending(x => x.PaymentDate).ToList();
+			response.Payments.AddRange(res);
 			return response;
 		}
 	}

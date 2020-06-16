@@ -64,7 +64,8 @@ namespace PaymentAPI.Services.Implementations.Business
 			return  (ListPaymentResponse)new ListPaymentsBL(this.PaymentValidatorService).ExecuteAction(request);
 		}
 
-
+		
+		 
 
 
 
