@@ -22,13 +22,17 @@ Moula github contains these folders.
   The Main web api project that does those 4 user stories mentioned in the requirement.
   I have kept the structure as neat as possible without over doing it.
   
-  ### BusinessLogicSingleResponsibility Folder
+  ### 1. BusinessLogicSingleResponsibility Folder
        This contains all the business logic secured in classes that follow Single reponsibility
-  ### BusinessLogicSingleResponsibility Folder
+  ### 2. BusinessLogicSingleResponsibility Folder
        This contains all the business logic secured in classes that follow Single reponsibility
-  ### Controllers
-      This contains end points for four user stories
-      Please note that server recieves input as JSON and outputs as JSON even though the return type and parameters are hard classes
-      This way, it gves much better type safety and compile tie error and more importantly it enforces raight data format is passed to         API. Otherwise API will simply throw an error. 
-      However business validation are done in APi such as amount must be positive decimal and must be supplied. Otherwise appropriate         error is sent back
-       
+  ### 3. Controllers Folder
+     This contains end points for four user stories
+     Please note that server receives input as JSON and outputs as JSON even though the return type and parameters are hard classes
+     This way, it gives much better type safety and compile time error and more importantly it enforces raight data to the API.              Otherwise API will simply throw an error. 
+     However business validations are done in APi such as the amount must be positive decimal and must be supplied. Otherwise appropriate   
+  ### 4 Data Folder
+     In contains in memory data. It is simply as list of payment transactions with its attributes and current balance
+     As you might expect, every time you start WEB API , there will be new data set.
+     ATTENTION: In order to run function test executable, API must be running. If you do run multiple instances functional test              simultaneously,test may fail. Of course, we can handle that using transactions if we have real database. However that is beyond the      scope of this project  
+ ### 5 Model Folder
