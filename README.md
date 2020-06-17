@@ -36,3 +36,12 @@ Moula github contains these folders.
      As you might expect, every time you start WEB API , there will be new data set.
      ATTENTION: In order to run function test executable, API must be running. If you do run multiple instances functional test              simultaneously,test may fail. Of course, we can handle that using transactions if we have real database. However that is beyond the      scope of this project  
  ### 5 Model Folder
+ Classes in the Model folder simplify classes with a set of properties without any methods in it. They represent. 
+#### 5.1  Business folder 
+         It contains one class representing the payment transaction with current balance, running balance and status.
+#### 5.2 Request folder
+        It contains classes for each type of request that needs to be received in endpoints.
+        Request classes implement Irequest interface mainly for interoperability.
+#### 4.3 Response folder
+       It has classes are the same. All response classes derive from Payment Response which contains properties such as is valid and            error messages. Sub classes contain user specific implementation. Create, Cancel, Approve responses contain affected payment which is return back to the caller
+
