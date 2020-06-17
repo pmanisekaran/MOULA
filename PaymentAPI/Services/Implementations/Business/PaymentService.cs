@@ -1,10 +1,6 @@
-﻿using PaymentAPI.Data;
+﻿using PaymentAPI.BusinessLogicSingleResponsibility;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
-using System;
-using System.Linq;
-using PaymentAPI.BusinessLogicSingleResponsibility;
-using PaymentAPI.Models.Business;
 using PaymentAPI.Services.Interfaces;
 
 namespace PaymentAPI.Services.Implementations.Business
@@ -26,8 +22,8 @@ namespace PaymentAPI.Services.Implementations.Business
 		public CreatePaymentResponse CreatePayment(CreatePaymentRequest createPaymentRequest)
 		{
 
-			 return (CreatePaymentResponse)new CreatePaymentBL(PaymentValidatorService).ExecuteAction(createPaymentRequest);
-			 
+			return (CreatePaymentResponse)new CreatePaymentBL(PaymentValidatorService).ExecuteAction(createPaymentRequest);
+
 
 
 		}
@@ -61,11 +57,11 @@ namespace PaymentAPI.Services.Implementations.Business
 		{
 			// request object not used as search criteria not part of the specification
 
-			return  (ListPaymentResponse)new ListPaymentsBL(this.PaymentValidatorService).ExecuteAction(request);
+			return (ListPaymentResponse)new ListPaymentsBL(this.PaymentValidatorService).ExecuteAction(request);
 		}
 
-		
-		 
+
+
 
 
 

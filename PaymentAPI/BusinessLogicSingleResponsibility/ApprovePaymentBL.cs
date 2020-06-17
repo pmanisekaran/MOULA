@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using PaymentAPI.Data;
+﻿using PaymentAPI.Data;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
 using PaymentAPI.Models.Responses.BaseClasses;
@@ -23,7 +19,7 @@ namespace PaymentAPI.BusinessLogicSingleResponsibility
 		public IPaymentResponse ExecuteAction(IRequest approvePaymentRequest)
 		{
 			ApprovePaymentResponse response =
-				ValidatorService.ValidateApprovePayment((ApprovePaymentRequest) approvePaymentRequest);
+				ValidatorService.ValidateApprovePayment((ApprovePaymentRequest)approvePaymentRequest);
 			if (response.IsValid)
 			{
 				response.Payment.Status = "Processed";

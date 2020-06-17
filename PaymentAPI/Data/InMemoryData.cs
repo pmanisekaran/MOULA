@@ -1,8 +1,6 @@
-﻿using System;
+﻿using PaymentAPI.Models.Business;
+using System;
 using System.Collections.Generic;
-using PaymentAPI.Models.Business;
-using PaymentAPI.Services.Implementations.Business;
-using PaymentAPI.Services.Implementations.Validators;
 
 namespace PaymentAPI.Data
 {

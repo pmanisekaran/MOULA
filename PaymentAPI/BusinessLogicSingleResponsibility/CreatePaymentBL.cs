@@ -1,14 +1,10 @@
 ﻿using PaymentAPI.Data;
-using PaymentAPI.Models;
+using PaymentAPI.Models.Business;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using PaymentAPI.Models.Business;
 using PaymentAPI.Models.Responses.BaseClasses;
 using PaymentAPI.Services.Interfaces;
+using System;
 
 namespace PaymentAPI.BusinessLogicSingleResponsibility
 {

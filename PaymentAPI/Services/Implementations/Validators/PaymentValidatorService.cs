@@ -1,14 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization.Policy;
-using PaymentAPI.Data;
-using PaymentAPI.Models;
+﻿using PaymentAPI.Data;
+using PaymentAPI.Models.Business;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using PaymentAPI.Models.Business;
 using PaymentAPI.Services.Interfaces;
+using System;
+using System.Linq;
 
 namespace PaymentAPI.Services.Implementations.Validators
 {
@@ -22,9 +18,9 @@ namespace PaymentAPI.Services.Implementations.Validators
 		{
 			CreatePaymentResponse response = new CreatePaymentResponse();
 			response.IsValid = false;
-			if (req.Amount <= 0m || req.PaymentDate== DateTime.MinValue)
+			if (req.Amount <= 0m || req.PaymentDate == DateTime.MinValue)
 				response.ErrorMessages.Add("Amount must be supplied and must be positive number and date must be supplied");
-			
+
 			else if (InMemoryData.CurrentBalance - req.Amount < 0m)
 				response.ErrorMessages.Add("Not Enough Balance");
 			else

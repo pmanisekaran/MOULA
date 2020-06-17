@@ -1,4 +1,7 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9f40e863_002D147d_002D4266_002D935f_002Dc640dcc4ea38/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bb91452c_002D6ea9_002D4a63_002D9b12_002D147818860b8e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreatePaymentTest_Disallow_Cancel_On_Closed_Payments" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9CDDF292-345A-49E1-8743-430C4AAF28E2::.NETCoreApp,Version=v3.1::NUnitTestPaymentsAPI.PaymentServiceTests.CreatePaymentTest_Disallow_Cancel_On_Closed_Payments&lt;/TestId&gt;&#xD;

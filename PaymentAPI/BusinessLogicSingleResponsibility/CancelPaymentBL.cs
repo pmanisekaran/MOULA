@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using PaymentAPI.Data;
-using PaymentAPI.Models.Business;
+﻿using PaymentAPI.Data;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
 using PaymentAPI.Models.Responses.BaseClasses;
@@ -26,7 +21,7 @@ namespace PaymentAPI.BusinessLogicSingleResponsibility
 			if (response.IsValid)
 			{
 				response.Payment.Status = "Closed";
-			//	InMemoryData.CurrentBalance -= response.Payment.Amount;
+				//	InMemoryData.CurrentBalance -= response.Payment.Amount;
 				response.Payment.RunningBalance = InMemoryData.CurrentBalance;
 				response.Payment.CancellationMessage = ((CancelPaymentRequest)req).CancelReason;
 				return response;

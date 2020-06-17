@@ -1,18 +1,10 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Newtonsoft.Json;
-using PaymentAPI.Data;
-using PaymentAPI.Models.Business;
+﻿using Newtonsoft.Json;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Net.Http;
-using System.Runtime.CompilerServices;
-using System.Security.Principal;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace FunctionalTest
@@ -22,7 +14,7 @@ namespace FunctionalTest
 
 		private const string baseUrl = @"http://localhost:60770/payment/";
 
-		private static List<KeyValuePair<Guid,string>> newlyAddedPayments = new List<KeyValuePair<Guid, string>>();
+		private static List<KeyValuePair<Guid, string>> newlyAddedPayments = new List<KeyValuePair<Guid, string>>();
 
 
 		static async Task Main(string[] args)
@@ -31,7 +23,7 @@ namespace FunctionalTest
 
 			Console.WriteLine("Press any key to start functional testing of API");
 			Console.ReadKey();
-			var cleardCnt= await ClearPayments();
+			var cleardCnt = await ClearPayments();
 			Console.WriteLine("Clreaed " + cleardCnt);
 			newlyAddedPayments.Clear();
 			string res;
@@ -91,7 +83,7 @@ namespace FunctionalTest
 				if (res.IsSuccessStatusCode)
 				{
 					int reply = await res.Content.ReadAsAsync<int>();
-					 
+
 					return reply.ToString();
 				}
 			}

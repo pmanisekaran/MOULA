@@ -3,13 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using PaymentAPI.Data;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
-using PaymentAPI.Services.Implementations.Business;
 using PaymentAPI.Services.Interfaces;
-using System.Collections.Generic;
 
 namespace PaymentAPI.Controllers
 {
-   
+
     [ApiController]
     [Route("[controller]")]
     public class PaymentController : ControllerBase

@@ -2,12 +2,9 @@ using NUnit.Framework;
 using PaymentAPI.Data;
 using PaymentAPI.Models.Requests;
 using PaymentAPI.Models.Responses;
-using System;
-using System.Net.Http;
-using System.Text;
-using Newtonsoft.Json;
 using PaymentAPI.Services.Implementations.Business;
 using PaymentAPI.Services.Implementations.Validators;
+using System;
 
 namespace NUnitTestPaymentsAPI
 {
@@ -245,6 +242,6 @@ namespace NUnitTestPaymentsAPI
 			}
 		}
 
-		 
+
 	}
 }
