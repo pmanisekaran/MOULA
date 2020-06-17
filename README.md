@@ -49,4 +49,11 @@ Moula github contains these folders.
 #### 6.1  Implementation folder contains services which are responsible for acting on the request using business logic classes. There are two services. They implement interfaces so dependency injection can take place. You can see that in controller classes how the constructor takes the services
 #### 6.1   Interfaces folder contains interface for services so dependency injection can take place. You can see that in controller classes how the constructor takes the services. It would also help in unit testing if mocking is needed.
 
-7. Start Up class implements configure services controller. It is configured to used transiently
+### 7. Start Up class implements configure services controller. It is configured to used transiently
+
+### 8 Payment Front End folder(Ignore this folder as it is incomplete and does not work)
+      It contains source code using ANGULAR 9, HTML5, Javascript, TYPESCRIPT for front end single page application.
+      You need node.js, npm and visual studio code editor to see the structure.
+      
+
+## How to run and debug?
