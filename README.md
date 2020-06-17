@@ -45,3 +45,6 @@ Moula github contains these folders.
 #### 4.3 Response folder
        It has classes are the same. All response classes derive from Payment Response which contains properties such as is valid and            error messages. Sub classes contain user specific implementation. Create, Cancel, Approve responses contain affected payment which is return back to the caller
 
+### 6 Services Folder
+#### 6.1  Implementation folder contains services which are responsible for acting on the request using business logic classes. There are two services. They implement interfaces so dependency injection can take place. You can see that in controller classes how the constructor takes the services
+#### 6.1   Interfaces folder contains interface for services so dependency injection can take place. You can see that in controller classes how the constructor takes the services. It would also help in unit testing if mocking is needed.
