@@ -134,3 +134,15 @@ I have not had time to refactor that project into neat classes and folders. Howe
 Please call me if you have problems downloading the source code or running it or if you have any questions or clarification.
 I would be happy to have code review session to understand design further
 
+### Deployment : 
+1. Install Jenkins server. Create/configure a job to connect to source code and make watch changes in source code or the job gets triggered.
+2. Specify network path to get the surce code, use MSBuild to build the solution 
+3. Add another step to run NUnit Tests. If fails, add a step to email
+4. add steps to move the compiled code to the specified server/folder. 
+vir
+In the solution project configuration it contains a parameter.xml file  for each environment and also contains build projects in the  solution. Depending upon parameters coming from Jenkins, configuration files would keys and values that are specified in the parameter xml.
+ 
+I am not employed currently. Otherwise I could send you sample deployment script easily
+ 
+Also in Azure Devops, one can set up a build and release pipe line using UI or Yaml and specify parameters. 
+
