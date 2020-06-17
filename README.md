@@ -23,7 +23,7 @@ Moula github contains these folders.
   I have kept the structure as neat as possible without over doing it.
   
   ### 1. BusinessLogicSingleResponsibility Folder
-       This contains all the business logic secured in classes that follow Single reponsibility
+       This contains all the business logic secured in classes that follow Single reponsibility. It implements IpaymentAction interface and has ExecuteAction method. 
   ### 2. BusinessLogicSingleResponsibility Folder
        This contains all the business logic secured in classes that follow Single reponsibility
   ### 3. Controllers Folder
@@ -48,3 +48,5 @@ Moula github contains these folders.
 ### 6 Services Folder
 #### 6.1  Implementation folder contains services which are responsible for acting on the request using business logic classes. There are two services. They implement interfaces so dependency injection can take place. You can see that in controller classes how the constructor takes the services
 #### 6.1   Interfaces folder contains interface for services so dependency injection can take place. You can see that in controller classes how the constructor takes the services. It would also help in unit testing if mocking is needed.
+
+7. Start Up class implements configure services controller. It is configured to used transiently
